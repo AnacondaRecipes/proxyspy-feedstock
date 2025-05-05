@@ -1,5 +1,5 @@
-{% set name = "<PLEASE ADD PKG NAME>" %}
-{% set version = "<PLEASE ADD PKG VERSION>" %}
+{% set name = "proxyspy" %}
+{% set version = "0.1.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: <sha256>
+  sha256: 288f688dcb72e05299c4765a4c77764a87ce30f780e0a2abcce9ab8252b55f86
 
 build:
   number: 0
@@ -18,27 +18,36 @@ requirements:
   host:
     - python
     - pip
+    - hatchling
   run:
     - python
+    - cryptography
 
 test:
   imports:
     - {{ name.replace('-', '.') }}
   requires:
     - pip
+    - pytest
   commands:
     - pip check
 
 about:
-  home: <PLEASE ADD HOME URL>
-  summary: <PLEASE ADD SUMMARY>
+  home: https://github.com/anaconda/proxyspy
+  summary: A debugging proxy that can log or intercept HTTPS requests
   description: |
-    <PLEASE ADD DESCRIPTION>
-  license: <PLEASE ADD LICENSE>
-  license_family: <PLEASE ADD LICENSE_FAMILY>
-  license_file: <PLEASE_ADD_LICENSE_FILE>
-  dev_url: <PLEASE ADD DEV URL>
-  doc_url: <PLEASE ADD DOC URL>
+    A single-file script for exercising HTTP/S client applications.
+    A debugging proxy that can log or intercept HTTPS requests. This tool can be used to:
+
+    - Monitor HTTPS traffic from applications
+    - Debug SSL/TLS issues
+    - Test applications against specific HTTP responses
+    - Simulate network delays
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE.txt
+  dev_url: https://github.com/anaconda/proxyspy
+  doc_url: https://github.com/anaconda/proxyspy
 
 extra:
   recipe-maintainers:

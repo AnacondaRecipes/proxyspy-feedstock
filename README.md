@@ -1,11 +1,11 @@
 About proxyspy-feedstock
 =======================
 
-Feedstock license: [BSD-3-Clause](LICENSE)
+Feedstock license: [BSD-3-Clause](https://github.com/anaconda/proxyspy/blob/main/LICENSE.txt)
 
 Home: https://github.com/anaconda/proxyspy
 
-Package license: BSD 3-Clause License
+Package license: BSD-3-Clause
 
 Summary: A debugging proxy that can log or intercept HTTPS requests
 

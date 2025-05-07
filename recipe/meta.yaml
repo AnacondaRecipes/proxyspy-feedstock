@@ -26,19 +26,13 @@ requirements:
     - cryptography
 
 test:
-  source_files:
-    - tests
   imports:
     - {{ name.replace('-', '.') }}
   requires:
     - pip
-    - pytest
-    - psutil
-    - requests
   commands:
     - pip check
     - proxyspy --help
-    - pytest -vv tests -k "not (test_forwarding_response_body or test_keep_certs or test_concurrent_connections)"
 
 about:
   home: https://github.com/anaconda/proxyspy

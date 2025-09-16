@@ -28,12 +28,18 @@ requirements:
 
 test:
   imports:
-    - {{ name.replace('-', '.') }}
+    - proxyspy
+  source_files:
+    - tests
   requires:
     - pip
+    - pytest
+    - requests
+    - psutil
   commands:
     - pip check
     - proxyspy --help
+    - pytest -v tests
 
 about:
   home: https://github.com/anaconda/proxyspy

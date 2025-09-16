@@ -13,7 +13,6 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: True  # [py<38]
   entry_points:
     - proxyspy = proxyspy:main
 
@@ -33,13 +32,13 @@ test:
     - tests
   requires:
     - pip
-    - pytest
-    - requests
-    - psutil
+    - pytest           # [unix]
+    - requests         # [unix]
+    - psutil           # [unix]
   commands:
     - pip check
     - proxyspy --help
-    - pytest -v tests
+    - pytest -v tests  # [unix]
 
 about:
   home: https://github.com/anaconda/proxyspy

@@ -1,6 +1,5 @@
 {% set name = "proxyspy" %}
 {% set version = "0.1.5" %}
-{% set sha256 = "c130cc14b854d72930698558caa0affe6fa76840d3cd6a75b0ffc269939329e3" %}
 
 package:
   name: {{ name|lower }}

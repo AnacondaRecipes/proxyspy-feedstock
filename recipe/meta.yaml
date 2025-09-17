@@ -38,6 +38,9 @@ test:
   commands:
     - pip check
     - proxyspy --help
+    # We are adding the full unit tests on Unix only; Windows tests still fail
+    # in our build platform due to our VM configuration. The source repository
+    # peforms full verification on Windows and all supported Python versions.
     - pytest -v tests  # [unix]
 
 about:

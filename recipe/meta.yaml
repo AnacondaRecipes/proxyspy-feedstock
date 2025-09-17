@@ -15,6 +15,7 @@ build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - proxyspy = proxyspy:main
+  skip: True  # [py<38]
 
 requirements:
   host:

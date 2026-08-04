@@ -1,18 +1,18 @@
 {% set name = "proxyspy" %}
-{% set version = "0.1.5" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c130cc14b854d72930698558caa0affe6fa76840d3cd6a75b0ffc269939329e3
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 0e36a5f052cbba2f2e42b07c9f1a719fd512fde9e6550dc5e7f8241284586882
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: True  # [py<38]
+  skip: true  # [py<310]
   entry_points:
     - proxyspy = proxyspy:main
 
@@ -32,9 +32,9 @@ test:
     - tests
   requires:
     - pip
-    - pytest           # [unix]
-    - requests         # [unix]
-    - psutil           # [unix]
+    - pytest  # [unix]
+    - requests  # [unix]
+    - psutil  # [unix]
   commands:
     - pip check
     - proxyspy --help
